@@ -75,3 +75,29 @@ for movie in list(movie_info.keys()):
         print (movie)
         del movie_info[movie]
 
+
+# # it is exponential and users have rated atleast 20 movies
+# max_movies_rated = -1
+
+# for a in user_to_movie:
+#     max_movies_rated = max(len(user_to_movie[a]), max_movies_rated)
+#     # number_movies_rated_per_user[len(user_to_movie[a])] += 1
+
+# number_movies_rated_per_user = [0]*(max_movies_rated+1)
+
+# for a in user_to_movie:
+#     number_movies_rated_per_user[len(user_to_movie[a])] += 1
+
+# # import matplotlib.pyplot as pp
+# # pp.plot(number_movies_rated_per_user)
+# # pp.show()
+
+
+## evey user doesnt have all the ratings from 1-5
+# for a in user_to_movie:
+#     set_ = set()    
+#     for b in user_to_movie[a]:
+#         set_.add(user_to_movie[a][b])
+#     if (len(set_) != 5):
+#         print ("ahaan, we are lacking", len(set_))
+
