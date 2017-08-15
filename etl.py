@@ -34,7 +34,7 @@ file_ = open(os.path.join(MOVIELENS_DIR, USER_DATA_FILE))
 
 user_info = {}
 
-# not loading zipcode
+# not loading zipcode and occupation
 for line in file_.readlines():
     line = line.strip().split('::')
     # line -> ['userid', 'gender', 'age', 'occupation', 'zipcode']
@@ -42,7 +42,7 @@ for line in file_.readlines():
     gender = 1 if line[1] == 'M' else 0
     user_info[int(line[0])].append(gender)
     user_info[int(line[0])].append(int(line[2]))
-    user_info[int(line[0])].append(int(line[3]))
+    # user_info[int(line[0])].append(int(line[3]))
 
 file_.close()
 ## We have user_data for every user
@@ -75,7 +75,6 @@ for movie in list(movie_info.keys()):
         print (movie)
         del movie_info[movie]
 
-
 # # it is exponential and users have rated atleast 20 movies
 # max_movies_rated = -1
 
@@ -101,3 +100,29 @@ for movie in list(movie_info.keys()):
 #     if (len(set_) != 5):
 #         print ("ahaan, we are lacking", len(set_))
 
+users = list(user_to_movie.keys())
+from random import shuffle
+random.seed(9001)
+shuffle(users)
+
+users_train = users[0:int(len(users)*0.8)]
+users_test = users[int(len(users)*0.8):]
+
+train_data = []
+test_data = []
+
+for user in users_train:
+    list_of_groups = zip(*(iter(user_to_movie[user].keys()),) *5)
+    for grp in list_of_groups:
+        datum = []
+        datum.append()
+        for element in grp:
+
+    for movie in user_to_movie[user]:
+        movie_rate = 
+        datum.append(user)
+        datum.append(movie)
+        datum.append(user_data[user][0])
+        datum.append(user_data[user][1])
+        datum.append(user_data[user][2])
+        datum.append(user_data[user][0])
